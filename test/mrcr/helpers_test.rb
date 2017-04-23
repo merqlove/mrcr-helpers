@@ -53,4 +53,11 @@ class Mrcr::HelpersTest < Minitest::Spec
       }).must_equal result
     end
   end
+
+  describe 'IpHelper' do
+    it 'when ip' do
+      require 'ipaddr'
+      _(IPAddr.new(Mrcr::Helpers::IpHelper.detect).ipv4?).must_equal true
+    end
+  end
 end
